@@ -13,47 +13,68 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1 class="site-title">Your Name</h1>
-      <nav aria-label="Primary">
-        <ul class="nav-list">
+  <p class="promo-banner">
+    Limited-time portfolio refresh.
+    <a href="#projects">See highlighted work</a>
+  </p>
+
+  <header class="site-header" role="banner">
+    <div class="container nav-shell">
+      <p class="wordmark">Your Name</p>
+      <nav class="desktop-nav" aria-label="Primary">
+        <ul class="pill-nav">
+          <li><a class="pill-link active" href="#about" aria-current="page">About</a></li>
+          <li><a class="pill-link" href="#projects">Projects</a></li>
+          <li><a class="pill-link" href="#resume">Resume</a></li>
+          <li><a class="pill-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#resume">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
+      </details>
     </div>
   </header>
 
   <main id="main-content">
-    <section id="about" class="hero container">
-      <div class="profile-wrapper">
-        <picture>
-          <source srcset="assets/profile.jpg" type="image/jpeg">
-          <img
-            class="profile-image"
-            src="assets/profile.png"
-            alt="Portrait of Your Name"
-            width="220"
-            height="220"
-            loading="eager"
-          >
-        </picture>
-      </div>
-      <div class="hero-text">
-        <h2>Hello, I am Your Name.</h2>
-        <p>
-          I am a [role or specialty] focused on building useful, user-friendly digital
-          experiences. This page highlights who I am, what I am building, and how to connect.
-        </p>
+    <section id="about" class="hero-band">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Personal Site</p>
+          <h1>Hello, I am Your Name.</h1>
+          <p class="hero-subtitle">
+            I design and build user-friendly products with a strong focus on clarity,
+            performance, and accessibility.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+          </div>
+        </div>
+        <div class="feature-photo-card">
+          <picture>
+            <source srcset="assets/profile.jpg" type="image/jpeg">
+            <img
+              class="hero-photo"
+              src="assets/profile.png"
+              alt="Portrait of Your Name"
+              width="720"
+              height="720"
+              loading="eager"
+            >
+          </picture>
+        </div>
       </div>
     </section>
 
-    <section id="projects" class="container section-card">
+    <section id="projects" class="container section">
       <h2>Projects</h2>
-      <ul class="project-list">
+      <ul class="project-grid">
         <li>
           <h3>Project One</h3>
           <p>Short description of what this project does and why it matters.</p>
@@ -62,27 +83,48 @@
           <h3>Project Two</h3>
           <p>Short description of the problem solved and technologies used.</p>
         </li>
+        <li>
+          <h3>Project Three</h3>
+          <p>Short description of outcomes, impact, and measurable improvements.</p>
+        </li>
       </ul>
     </section>
 
-    <section id="resume" class="container section-card">
+    <section id="resume" class="container section checkout-panel">
       <h2>CV / Resume</h2>
       <p>
-        Download my latest CV:
-        <a href="assets/cv.pdf">View CV (PDF)</a>
+        Download the latest version of my experience, education, and selected work.
       </p>
+      <a class="btn btn-buy-cta" href="assets/cv.pdf">Download CV (PDF)</a>
     </section>
 
-    <section id="contact" class="container section-card">
+    <section id="contact" class="container section">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/your-username">github.com/your-username</a></p>
+      <div class="icon-feature-row">
+        <article class="icon-feature">
+          <h3>Email</h3>
+          <p><a href="mailto:you@example.com">you@example.com</a></p>
+        </article>
+        <article class="icon-feature">
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/your-username">github.com/your-username</a></p>
+        </article>
+        <article class="icon-feature">
+          <h3>LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/your-profile/">linkedin.com/in/your-profile</a></p>
+        </article>
+        <article class="icon-feature">
+          <h3>Location</h3>
+          <p>City, Country</p>
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year">2026</span> Your Name. All rights reserved.</p>
+  <footer class="footer-region">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Your Name. All rights reserved.</p>
+      <p><a href="#about">Back to top</a></p>
     </div>
   </footer>
 </body>
