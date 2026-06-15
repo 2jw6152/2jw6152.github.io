@@ -10,16 +10,29 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
+  <p class="promo-banner">
+    Joonwoo Lee
+    <a href="#resume">CV</a>
+  </p>
+
   <header class="site-header" role="banner">
     <div class="container nav-shell">
       <p class="wordmark">Joonwoo Lee</p>
-      <nav aria-label="Primary">
+      <nav class="desktop-nav" aria-label="Primary">
         <ul class="pill-nav">
           <li><a class="pill-link active" href="#about" aria-current="page">About</a></li>
           <li><a class="pill-link" href="#resume">Resume</a></li>
           <li><a class="pill-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </details>
     </div>
   </header>
 
@@ -30,9 +43,14 @@
           <h1>Joonwoo Lee</h1>
           <p class="hero-subtitle">Seoul, Korea</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:2jw6152@gmail.com">2jw6152@gmail.com</a>
-            <a class="btn btn-secondary" href="https://github.com/2jw6152">github.com/2jw6152</a>
+            <a class="btn btn-primary" href="mailto:2jw6152@gmail.com">Email</a>
+            <a class="btn btn-secondary" href="https://github.com/2jw6152">GitHub</a>
           </div>
+          <ul class="contact-inline" aria-label="Primary details">
+            <li><strong>Email:</strong> <a href="mailto:2jw6152@gmail.com">2jw6152@gmail.com</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/2jw6152">2jw6152</a></li>
+            <li><strong>Location:</strong> Seoul, Korea</li>
+          </ul>
         </div>
         <div class="feature-photo-card">
           <picture>

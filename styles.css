@@ -1,17 +1,22 @@
 :root {
   color-scheme: light;
   --canvas: #ffffff;
+  --surface-soft: #f6f8fb;
   --hairline: #cfd7e1;
   --hairline-soft: #e6ebf2;
   --ink-deep: #0a1317;
   --ink: #1b2733;
   --charcoal: #2c3b46;
+  --steel: #556474;
   --primary: #0064e0;
   --primary-deep: #0143b5;
+  --warning: #ffd84d;
   --focus: #8bbcff;
   --rounded-full: 100px;
   --rounded-xl: 16px;
   --rounded-xxxl: 32px;
+  --rounded-feature: 40px;
+  --space-xs: 8px;
   --space-base: 16px;
   --space-md: 20px;
   --space-lg: 24px;
@@ -35,7 +40,7 @@ body {
   color: var(--ink);
   background: var(--canvas);
   line-height: 1.5;
-  letter-spacing: -0.14px;
+  letter-spacing: -0.16px;
 }
 
 h1,
@@ -53,6 +58,8 @@ h3 {
 
 a {
   color: var(--ink-deep);
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
 }
 
 a:focus-visible,
@@ -76,6 +83,21 @@ summary:focus-visible {
   z-index: 1000;
 }
 
+.promo-banner {
+  margin: 0;
+  background: var(--ink-deep);
+  color: var(--canvas);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.43;
+  text-align: center;
+  padding: 12px var(--space-lg);
+}
+
+.promo-banner a {
+  color: var(--canvas);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -96,8 +118,9 @@ summary:focus-visible {
 
 .wordmark {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
+  letter-spacing: -0.16px;
 }
 
 .pill-nav {
@@ -113,7 +136,7 @@ summary:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
+  min-height: 44px;
   padding: 8px 16px;
   border: 1px solid var(--hairline);
   border-radius: var(--rounded-full);
@@ -122,6 +145,8 @@ summary:focus-visible {
   background: var(--canvas);
   font-size: 14px;
   font-weight: 700;
+  line-height: 1.43;
+  transition: background-color 180ms ease-out, color 180ms ease-out, border-color 180ms ease-out;
 }
 
 .pill-link.active {
@@ -130,14 +155,54 @@ summary:focus-visible {
   border-color: var(--ink-deep);
 }
 
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav summary {
+  list-style: none;
+  cursor: pointer;
+  min-height: 44px;
+  padding: 8px 16px;
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--hairline);
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+.mobile-nav[open] {
+  width: min(320px, 92vw);
+  border: 1px solid var(--hairline-soft);
+  border-radius: var(--rounded-xl);
+  background: var(--canvas);
+  padding: var(--space-base);
+}
+
+.mobile-nav ul {
+  margin: var(--space-base) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.mobile-nav a {
+  display: block;
+  border-radius: 10px;
+  padding: var(--space-xs) 0;
+}
+
 .hero-band {
-  padding: var(--space-section) 0;
+  padding: calc(var(--space-section) + var(--space-md)) 0 var(--space-section);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafd 100%);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(320px, 1fr) minmax(280px, 1fr);
-  gap: var(--space-xl);
+  grid-template-columns: minmax(320px, 1fr) minmax(360px, 1fr);
+  gap: 40px;
   align-items: center;
 }
 
@@ -151,6 +216,9 @@ summary:focus-visible {
 .hero-subtitle {
   margin: 0;
   font-size: 18px;
+  font-weight: 400;
+  line-height: 1.44;
+  color: var(--charcoal);
 }
 
 .hero-actions {
@@ -167,10 +235,11 @@ summary:focus-visible {
   text-decoration: none;
   border-radius: var(--rounded-full);
   min-height: 44px;
-  padding: 12px 28px;
+  padding: 12px 30px;
   font-size: 14px;
   font-weight: 700;
   border: 2px solid transparent;
+  transition: transform 160ms ease-out, background-color 180ms ease-out;
 }
 
 .btn-primary {
@@ -180,6 +249,7 @@ summary:focus-visible {
 
 .btn-primary:active {
   background: var(--charcoal);
+  transform: translateY(1px);
 }
 
 .btn-secondary {
@@ -195,17 +265,33 @@ summary:focus-visible {
 
 .btn-buy-cta:active {
   background: var(--primary-deep);
+  transform: translateY(1px);
+}
+
+.contact-inline {
+  margin: var(--space-xl) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.contact-inline li {
+  font-size: 16px;
+  color: var(--ink);
 }
 
 .feature-photo-card {
-  border-radius: var(--rounded-xxxl);
+  border-radius: var(--rounded-feature);
   overflow: hidden;
+  background: var(--canvas);
+  border: 1px solid var(--hairline-soft);
 }
 
 .hero-photo {
   width: 100%;
   display: block;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 
@@ -217,13 +303,15 @@ summary:focus-visible {
   font-size: 36px;
   font-weight: 500;
   margin-bottom: var(--space-lg);
+  line-height: 1.28;
 }
 
 .checkout-panel {
-  border: 1px solid var(--hairline-soft);
-  border-radius: var(--rounded-xl);
-  padding: var(--space-lg);
-  max-width: 620px;
+  background: var(--canvas);
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
+  padding: var(--space-xl);
+  max-width: 700px;
   box-shadow: rgba(20, 22, 26, 0.3) 0 1px 4px 0;
 }
 
@@ -234,44 +322,70 @@ summary:focus-visible {
 }
 
 .icon-feature {
-  border: 1px solid var(--hairline-soft);
-  border-radius: var(--rounded-xl);
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
   padding: var(--space-lg);
-  background: var(--canvas);
+  background: var(--surface-soft);
 }
 
 .icon-feature h3 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 8px;
+  line-height: 1.44;
 }
 
 .icon-feature p {
   margin: 0;
+  font-size: 14px;
+  line-height: 1.43;
 }
 
 .footer-region {
   border-top: 1px solid var(--hairline-soft);
-  padding: var(--space-md) 0;
+  padding: 12px 0;
 }
 
 .footer-inner {
   margin: 0;
-  color: #556474;
+  color: var(--steel);
   font-size: 12px;
 }
 
+@media (max-width: 1023px) {
+  .hero-copy h1 {
+    font-size: 48px;
+  }
+
+  .hero-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 767px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
   .hero-band {
-    padding: 48px 0;
+    padding: 48px 0 40px;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   .hero-copy h1 {
     font-size: 36px;
+  }
+
+  .checkout-panel {
+    padding: var(--space-lg);
   }
 
   .icon-feature-row {
@@ -280,6 +394,12 @@ summary:focus-visible {
 }
 
 @media (max-width: 479px) {
+  .promo-banner {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .hero-copy h1 {
     font-size: 24px;
   }
