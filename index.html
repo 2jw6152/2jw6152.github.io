@@ -1,7 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Personal website with profile, projects, resume, and contact details."
+  >
+  <title>Your Name | Personal Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <h1>Welcome to my Personal Page</h1>
-  <p>Hosted on Github Pages!</p>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">Your Name</h1>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="about" class="hero container">
+      <div class="profile-wrapper">
+        <picture>
+          <source srcset="assets/profile.jpg" type="image/jpeg">
+          <img
+            class="profile-image"
+            src="assets/profile.png"
+            alt="Portrait of Your Name"
+            width="220"
+            height="220"
+            loading="eager"
+          >
+        </picture>
+      </div>
+      <div class="hero-text">
+        <h2>Hello, I am Your Name.</h2>
+        <p>
+          I am a [role or specialty] focused on building useful, user-friendly digital
+          experiences. This page highlights who I am, what I am building, and how to connect.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="container section-card">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li>
+          <h3>Project One</h3>
+          <p>Short description of what this project does and why it matters.</p>
+        </li>
+        <li>
+          <h3>Project Two</h3>
+          <p>Short description of the problem solved and technologies used.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="resume" class="container section-card">
+      <h2>CV / Resume</h2>
+      <p>
+        Download my latest CV:
+        <a href="assets/cv.pdf">View CV (PDF)</a>
+      </p>
+    </section>
+
+    <section id="contact" class="container section-card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/your-username">github.com/your-username</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Your Name. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
