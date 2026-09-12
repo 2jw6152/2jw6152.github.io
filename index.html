@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal website for Joonwoo Lee.">
-  <title>Joonwoo Lee</title>
+  <meta name="description" content="나날이 — 나다운 매일을 위한 AI 일기장. 오늘의 마음을 기록하고, 과거의 나를 다시 만나보세요.">
+  <title>나날이 — 나다운 매일을 위한 AI 일기장</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <p class="promo-banner">
-    Joonwoo Lee
-    <a href="#resume">CV</a>
-  </p>
+  <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
 
   <header class="site-header" role="banner">
     <div class="container nav-shell">
-      <p class="wordmark">Joonwoo Lee</p>
-      <nav class="desktop-nav" aria-label="Primary">
+      <p class="wordmark">나날이</p>
+      <nav class="desktop-nav" aria-label="주요 메뉴">
         <ul class="pill-nav">
-          <li><a class="pill-link active" href="#about" aria-current="page">About</a></li>
-          <li><a class="pill-link" href="#resume">Resume</a></li>
-          <li><a class="pill-link" href="#contact">Contact</a></li>
+          <li><a class="pill-link active" href="#about" aria-current="page">소개</a></li>
+          <li><a class="pill-link" href="#features">기능</a></li>
+          <li><a class="pill-link" href="#download">다운로드</a></li>
         </ul>
       </nav>
       <details class="mobile-nav">
-        <summary>Menu</summary>
+        <summary>메뉴</summary>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">소개</a></li>
+          <li><a href="#features">기능</a></li>
+          <li><a href="#download">다운로드</a></li>
         </ul>
       </details>
     </div>
@@ -38,63 +33,70 @@
 
   <main id="main-content">
     <section id="about" class="hero-band">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <h1>Joonwoo Lee</h1>
-          <p class="hero-subtitle">Seoul, Korea</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:2jw6152@gmail.com">Email</a>
-            <a class="btn btn-secondary" href="https://github.com/2jw6152">GitHub</a>
-          </div>
-          <ul class="contact-inline" aria-label="Primary details">
-            <li><strong>Email:</strong> <a href="mailto:2jw6152@gmail.com">2jw6152@gmail.com</a></li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/2jw6152">2jw6152</a></li>
-            <li><strong>Location:</strong> Seoul, Korea</li>
-          </ul>
-        </div>
-        <div class="feature-photo-card">
-          <picture>
-            <source srcset="assets/profile.jpg" type="image/jpeg">
-            <img
-              class="hero-photo"
-              src="assets/profile.png"
-              alt="Portrait of Joonwoo Lee"
-              width="720"
-              height="720"
-              loading="eager"
-            >
-          </picture>
+      <div class="container hero-copy">
+        <p class="eyebrow">AI 일기장</p>
+        <h1>나날이</h1>
+        <p class="hero-subtitle">나다운 매일을 위한 기록.</p>
+        <p class="hero-lead">
+          오늘의 마음과 생각을 편하게 남겨 보세요.
+          기록이 쌓이면 오늘 쓴 글과 닮은 과거의 하루를 다시 만나고,
+          내가 어떻게 달라져 왔는지도 천천히 돌아볼 수 있어요.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://apps.apple.com/kr/app/id6806804521">App Store</a>
+          <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.nanari.app">Google Play</a>
         </div>
       </div>
     </section>
 
-    <section id="resume" class="container section checkout-panel">
-      <h2>CV / Resume</h2>
-      <a class="btn btn-buy-cta" href="assets/cv.pdf">Download CV (PDF)</a>
-    </section>
-
-    <section id="contact" class="container section">
-      <h2>Contact</h2>
+    <section id="features" class="container section">
+      <h2>이런 걸 할 수 있어요</h2>
       <div class="icon-feature-row">
         <article class="icon-feature">
-          <h3>Email</h3>
-          <p><a href="mailto:2jw6152@gmail.com">2jw6152@gmail.com</a></p>
+          <h3>오늘의 일기</h3>
+          <p>제목과 사진으로 하루를 자유롭게 남겨요. 새벽 3시 전까지는 전날로 묶여, 늦게 끝난 하루도 자연스럽게 한 날이 됩니다.</p>
         </article>
         <article class="icon-feature">
-          <h3>GitHub</h3>
-          <p><a href="https://github.com/2jw6152">2jw6152</a></p>
+          <h3>AI 공감과 과거 기록</h3>
+          <p>오늘 쓴 일기에 짧은 공감을 받고, 비슷한 마음이 담겼던 과거의 하루를 다시 꺼내 볼 수 있어요.</p>
         </article>
         <article class="icon-feature">
-          <h3>Location</h3>
-          <p>Seoul, Korea</p>
+          <h3>주간 리포트</h3>
+          <p>프로에서는 한 주의 마음과 기록을 차분히 정리한 AI 주간 리포트를 볼 수 있어요.</p>
         </article>
+        <article class="icon-feature">
+          <h3>캘린더와 흐름</h3>
+          <p>달력에서 기록을 한눈에 보고, 작성 수와 연속 일수로 나만의 흐름을 이어갈 수 있어요.</p>
+        </article>
+        <article class="icon-feature">
+          <h3>가까운 사람과 나누기</h3>
+          <p>친구 코드로 연결하면, 공개한 일기에 공감과 댓글을 주고받을 수 있어요.</p>
+        </article>
+        <article class="icon-feature">
+          <h3>무료와 프로</h3>
+          <p>일기는 무료로 쓸 수 있어요. 프로는 광고 없이 AI 인사이트, 과거 일기 추천, 주간 리포트, 사진 10장을 씁니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="download" class="container section checkout-panel">
+      <h2>앱 다운로드</h2>
+      <p class="panel-copy">iPhone과 Android에서 나날이를 사용할 수 있어요.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://apps.apple.com/kr/app/id6806804521">App Store에서 보기</a>
+        <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.nanari.app">Google Play에서 보기</a>
       </div>
     </section>
   </main>
 
   <footer class="footer-region">
     <div class="container footer-inner">
-      <p>&copy; 2026 Joonwoo Lee</p>
+      <p>© 2026 나날이 · IriDev</p>
+      <p class="footer-links">
+        <a href="https://noisy-clover-17d.notion.site/3ce50fee5d3a804da455fc6b14748d35">이용약관</a>
+        <a href="https://noisy-clover-17d.notion.site/3ce50fee5d3a8094aa72f80c883331a3">개인정보 처리방침</a>
+        <a href="mailto:iridev2580@gmail.com">문의</a>
+      </p>
     </div>
   </footer>
 </body>
