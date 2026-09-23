@@ -1,4 +1,5 @@
-Place your personal assets here:
+Place branding and media assets here:
 
-- `profile.jpg` or `profile.png` for the profile image shown on the homepage
-- `cv.pdf` for the CV / Resume link
+- `logo.png` — transparent brand mark (book + leaf)
+- `logo-mark.png` / `favicon.png` — compact icon variants
+- `profile.jpg` / `cv.pdf` — legacy personal-site assets (unused on the app landing)
