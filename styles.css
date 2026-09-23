@@ -19,7 +19,8 @@
   --space-lg: 24px;
   --space-xl: 32px;
   --space-section: 64px;
-  --sticky-download-height: 72px;
+  --space-section-lg: 88px;
+  --sticky-download-height: 76px;
 }
 
 *,
@@ -157,7 +158,7 @@ summary:focus-visible {
 }
 
 .hero-band {
-  padding: calc(var(--space-section) + 16px) 0 var(--space-section);
+  padding: calc(var(--space-section) + 16px) 0 var(--space-section-lg);
   background: linear-gradient(180deg, #ffffff 0%, #f4f8f3 100%);
 }
 
@@ -192,30 +193,37 @@ summary:focus-visible {
   max-width: 40rem;
 }
 
+.cta-prompt {
+  margin: var(--space-xl) 0 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-deep);
+}
+
 .store-cta-group {
-  margin-top: var(--space-xl);
+  margin-top: 12px;
   display: flex;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .store-cta-group-lg {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
   justify-content: center;
 }
 
 .store-btn {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  min-width: 200px;
-  min-height: 64px;
-  padding: 12px 22px;
-  border-radius: 14px;
+  gap: 14px;
+  min-width: 220px;
+  min-height: 72px;
+  padding: 14px 26px;
+  border-radius: 16px;
   text-decoration: none;
   color: #fff;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
-  box-shadow: 0 4px 14px rgba(28, 42, 31, 0.18);
+  box-shadow: 0 6px 18px rgba(28, 42, 31, 0.2);
 }
 
 .store-btn:hover {
@@ -244,14 +252,14 @@ summary:focus-visible {
 }
 
 .store-btn-label {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  opacity: 0.88;
+  opacity: 0.9;
 }
 
 .store-btn-name {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -267,7 +275,7 @@ summary:focus-visible {
 }
 
 .features-band {
-  padding: var(--space-section) 0;
+  padding: var(--space-section-lg) 0 var(--space-section);
   background: var(--canvas);
 }
 
@@ -279,9 +287,9 @@ summary:focus-visible {
   background: linear-gradient(160deg, var(--surface-mint) 0%, var(--surface-soft) 55%, #ffffff 100%);
   border: 1px solid var(--hairline);
   border-radius: 28px;
-  padding: calc(var(--space-xl) + 8px) var(--space-xl);
+  padding: calc(var(--space-xl) + 16px) var(--space-xl);
   text-align: center;
-  box-shadow: rgba(20, 22, 26, 0.08) 0 1px 4px 0;
+  box-shadow: rgba(20, 22, 26, 0.1) 0 8px 28px 0;
 }
 
 .download-eyebrow {
@@ -435,6 +443,11 @@ summary:focus-visible {
   }
 
   .features-band {
-    padding: 48px 0;
+    padding: 64px 0 48px;
+  }
+
+  .sticky-store {
+    min-height: 52px;
+    font-size: 16px;
   }
 }
