@@ -19,7 +19,8 @@
   --space-lg: 24px;
   --space-xl: 32px;
   --space-section: 64px;
-  --space-section-lg: 88px;
+  --space-section-lg: 96px;
+  --space-section-xl: 120px;
   --sticky-download-height: 76px;
 }
 
@@ -158,7 +159,7 @@ summary:focus-visible {
 }
 
 .hero-band {
-  padding: calc(var(--space-section) + 16px) 0 var(--space-section-lg);
+  padding: calc(var(--space-section) + 16px) 0 var(--space-section-xl);
   background: linear-gradient(180deg, #ffffff 0%, #f4f8f3 100%);
 }
 
@@ -275,8 +276,9 @@ summary:focus-visible {
 }
 
 .features-band {
-  padding: var(--space-section-lg) 0 var(--space-section);
+  padding: var(--space-section-xl) 0 var(--space-section-lg);
   background: var(--canvas);
+  border-top: 1px solid var(--hairline-soft);
 }
 
 .download-band {
@@ -443,7 +445,7 @@ summary:focus-visible {
   }
 
   .features-band {
-    padding: 64px 0 48px;
+    padding: 80px 0 56px;
   }
 
   .sticky-store {
