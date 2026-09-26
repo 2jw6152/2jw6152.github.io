@@ -8,6 +8,15 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/logo-mark.png">
   <link rel="stylesheet" href="styles.css">
+  <!--
+    스토어 버튼 클릭 수는 Google Analytics(GA4) 대시보드에서만 확인됩니다.
+    측정 ID(G-XXXXXXXXXX)를 아래에 넣으면 App Store / Google Play 클릭이 집계됩니다.
+    비워 두면 추적하지 않습니다.
+  -->
+  <script>
+    window.NANARI_GA_ID = "";
+  </script>
+  <script src="analytics.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
@@ -22,7 +31,7 @@
         <ul class="pill-nav">
           <li><a class="pill-link active" href="#about" aria-current="page">소개</a></li>
           <li><a class="pill-link" href="#features">기능</a></li>
-          <li><a class="pill-link" href="#download">다운로드</a></li>
+          <li><a class="pill-link" href="#store-cta">다운로드</a></li>
         </ul>
       </nav>
       <details class="mobile-nav">
@@ -30,7 +39,7 @@
         <ul>
           <li><a href="#about">소개</a></li>
           <li><a href="#features">기능</a></li>
-          <li><a href="#download">다운로드</a></li>
+          <li><a href="#store-cta">다운로드</a></li>
         </ul>
       </details>
     </div>
@@ -43,14 +52,13 @@
           <p class="eyebrow">AI 일기장</p>
           <h1>나날이</h1>
           <p class="hero-subtitle">나다운 매일을 위한 기록.</p>
-          <p class="hero-lead">
-            오늘의 마음과 생각을 편하게 남겨 보세요.
-            기록이 쌓이면 오늘 쓴 글과 닮은 과거의 하루를 다시 만나고,
-            내가 어떻게 달라져 왔는지도 천천히 돌아볼 수 있어요.
-          </p>
           <p class="cta-prompt">무료로 시작하기</p>
-          <div class="store-cta-group" aria-label="앱 다운로드">
-            <a class="store-btn store-btn-apple" href="https://apps.apple.com/kr/app/id6806804521">
+          <div id="store-cta" class="store-cta-group" aria-label="앱 다운로드">
+            <a
+              class="store-btn store-btn-apple"
+              href="https://apps.apple.com/kr/app/id6806804521"
+              data-store="app_store"
+            >
               <span class="store-btn-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
                   <path d="M18.71 12.46c-.03-2.18 1.78-3.23 1.86-3.28-1.01-1.48-2.59-1.68-3.15-1.7-1.34-.14-2.62.79-3.3.79-.69 0-1.75-.77-2.88-.75-1.48.02-2.85.86-3.61 2.18-1.54 2.67-.39 6.62 1.11 8.78.73 1.06 1.61 2.24 2.76 2.2 1.11-.05 1.53-.71 2.87-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.07 2.66-2.14.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.33-3.5l-.07-.1zM15.57 5.28c.61-.74 1.02-1.77.91-2.8-.88.04-1.94.59-2.57 1.32-.56.65-.1.05-1.72 2.06.91.07 1.84-.52 2.38-1.58z"/>
@@ -61,7 +69,11 @@
                 <span class="store-btn-name">App Store</span>
               </span>
             </a>
-            <a class="store-btn store-btn-google" href="https://play.google.com/store/apps/details?id=com.nanari.app">
+            <a
+              class="store-btn store-btn-google"
+              href="https://play.google.com/store/apps/details?id=com.nanari.app"
+              data-store="google_play"
+            >
               <span class="store-btn-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
                   <path d="M3.6 2.8c-.3.2-.5.6-.5 1.1v16.2c0 .5.2.9.5 1.1l.1.1 9.1-9.1v-.3L3.7 2.7l-.1.1zm11.1 6.4-2.1 2.1 2.1 2.1 4.8-2.7c.6-.4.6-1 0-1.3l-4.8-2.7v.5zM13.5 12.4 11.3 14.6l3.8 3.8c.4.4 1 .1 1.5-.2l4.8-2.7-4.9-2.8-3-.3zm-2.2-2.2L3.7 2.5c.2 0 .4 0 .6.1l10.7 6.1-3.7 1.5zM14.9 17.9l-3.6 2.1c-.2.1-.4.2-.6.2l8.5-8.5-1.5-.9-2.8 7.1z"/>
@@ -73,6 +85,11 @@
               </span>
             </a>
           </div>
+          <p class="promo-note">
+            앱 설치 후 <strong>설정 → 혜택 코드</strong>에서
+            <code class="promo-code">NANARI30</code>을 입력하면
+            프로 기능을 <strong>한 달 무료</strong>로 쓸 수 있어요.
+          </p>
         </div>
         <div class="hero-logo-wrap" aria-hidden="true">
           <img class="hero-logo" src="assets/logo.png" alt="">
@@ -85,45 +102,12 @@
         <h2>이런 걸 할 수 있어요</h2>
         <ul class="feature-list">
           <li>오늘의 일기</li>
-          <li>AI의 따뜻한 공감</li>
-          <li>과거 일기 추천</li>
+          <li>AI 공감과 과거 기록</li>
           <li>주간 리포트</li>
           <li>캘린더와 흐름</li>
           <li>가까운 사람과 나누기</li>
+          <li>무료와 프로</li>
         </ul>
-      </div>
-    </section>
-
-    <section id="download" class="download-band">
-      <div class="container download-panel">
-        <img class="download-logo" src="assets/logo.png" alt="" width="56" height="56">
-        <p class="download-eyebrow">지금 바로 시작</p>
-        <h2>나날이를 다운로드하세요</h2>
-        <p class="panel-copy">iPhone과 Android에서 무료로 시작할 수 있어요.</p>
-        <div class="store-cta-group store-cta-group-lg" aria-label="앱 다운로드">
-          <a class="store-btn store-btn-apple" href="https://apps.apple.com/kr/app/id6806804521">
-            <span class="store-btn-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                <path d="M18.71 12.46c-.03-2.18 1.78-3.23 1.86-3.28-1.01-1.48-2.59-1.68-3.15-1.7-1.34-.14-2.62.79-3.3.79-.69 0-1.75-.77-2.88-.75-1.48.02-2.85.86-3.61 2.18-1.54 2.67-.39 6.62 1.11 8.78.73 1.06 1.61 2.24 2.76 2.2 1.11-.05 1.53-.71 2.87-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.07 2.66-2.14.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.33-3.5l-.07-.1zM15.57 5.28c.61-.74 1.02-1.77.91-2.8-.88.04-1.94.59-2.57 1.32-.56.65-.1.05-1.72 2.06.91.07 1.84-.52 2.38-1.58z"/>
-              </svg>
-            </span>
-            <span class="store-btn-text">
-              <span class="store-btn-label">Download on the</span>
-              <span class="store-btn-name">App Store</span>
-            </span>
-          </a>
-          <a class="store-btn store-btn-google" href="https://play.google.com/store/apps/details?id=com.nanari.app">
-            <span class="store-btn-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-                <path d="M3.6 2.8c-.3.2-.5.6-.5 1.1v16.2c0 .5.2.9.5 1.1l.1.1 9.1-9.1v-.3L3.7 2.7l-.1.1zm11.1 6.4-2.1 2.1 2.1 2.1 4.8-2.7c.6-.4.6-1 0-1.3l-4.8-2.7v.5zM13.5 12.4 11.3 14.6l3.8 3.8c.4.4 1 .1 1.5-.2l4.8-2.7-4.9-2.8-3-.3zm-2.2-2.2L3.7 2.5c.2 0 .4 0 .6.1l10.7 6.1-3.7 1.5zM14.9 17.9l-3.6 2.1c-.2.1-.4.2-.6.2l8.5-8.5-1.5-.9-2.8 7.1z"/>
-              </svg>
-            </span>
-            <span class="store-btn-text">
-              <span class="store-btn-label">GET IT ON</span>
-              <span class="store-btn-name">Google Play</span>
-            </span>
-          </a>
-        </div>
       </div>
     </section>
   </main>
@@ -138,10 +122,5 @@
       </p>
     </div>
   </footer>
-
-  <div class="sticky-download" role="region" aria-label="빠른 다운로드">
-    <a class="sticky-store sticky-store-apple" href="https://apps.apple.com/kr/app/id6806804521">App Store</a>
-    <a class="sticky-store sticky-store-google" href="https://play.google.com/store/apps/details?id=com.nanari.app">Google Play</a>
-  </div>
 </body>
 </html>
